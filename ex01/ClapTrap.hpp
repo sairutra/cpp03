@@ -24,6 +24,8 @@ public:
 	bool isAlive();
 	ClapTrap();
 	ClapTrap(std::string);
+	ClapTrap(const ClapTrap&);
+	ClapTrap& operator= (const ClapTrap&);
 	~ClapTrap();
 };
 
