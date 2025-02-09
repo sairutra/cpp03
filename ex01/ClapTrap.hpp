@@ -6,9 +6,9 @@ class ClapTrap
 {
 private:
 	std::string name;
-	int hitPoints{10};
-	int energyPoints{10};
-	int attackDamage{10};
+	int hitPoints{100};
+	int energyPoints{50};
+	int attackDamage{20};
 public:
 	void attack(const std::string& target);
 	void takeDamage(unsigned int amount);
