@@ -7,16 +7,16 @@ class ClapTrap
 private:
 	std::string name;
 	int hitPoints{100};
-	int energyPoints{100};
-	int attackDamage{30};
+	int energyPoints{50};
+	int attackDamage{20};
 public:
 	void attack(const std::string& target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
-	std::string getName();
-	int getHitPoints();
-	int getEnergyPoints();
-	int getAttackDamage();
+	std::string getName() const;
+	int getHitPoints() const;
+	int getEnergyPoints() const;
+	int getAttackDamage() const;
 	void setName(std::string&);
 	void setHitPoints(int);
 	void setEnergyPoints(int);
@@ -24,6 +24,8 @@ public:
 	bool isAlive();
 	ClapTrap();
 	ClapTrap(std::string);
+	ClapTrap(const ClapTrap&);
+	ClapTrap& operator= (const ClapTrap&);
 	~ClapTrap();
 };
 
