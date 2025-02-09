@@ -33,22 +33,22 @@ void ClapTrap::beRepaired(unsigned int amount)
 	 << amount << " points of hitPoints!" << std::endl;
 }
 
-std::string ClapTrap::getName()
+std::string ClapTrap::getName() const
 {
 	return (name);
 }
 
-int ClapTrap::getHitPoints()
+int ClapTrap::getHitPoints() const
 {
 	return (hitPoints);
 }
 
-int ClapTrap::getEnergyPoints()
+int ClapTrap::getEnergyPoints() const
 {
 	return (energyPoints);
 }
 
-int ClapTrap::getAttackDamage()
+int ClapTrap::getAttackDamage() const
 {
 	return (attackDamage);
 }
@@ -89,3 +89,25 @@ ClapTrap::~ClapTrap()
 	std::cout << "ClapTrap destructor called" << std::endl;
 }
 
+ClapTrap& ClapTrap::operator=(const ClapTrap& clap)
+{
+	std::cout << "Copy assignment operator called" << std::endl;
+	std::string title = clap.getName();
+	if (this == &clap)
+		return (*this);
+	setName(title);
+	setAttackDamage(clap.getAttackDamage());
+	setEnergyPoints(clap.getEnergyPoints());
+	setHitPoints(clap.getHitPoints());
+	return (*this);
+}
+
+ClapTrap::ClapTrap(const ClapTrap& clap)
+{
+	std::cout << "Copy constructor called" << std::endl;
+	std::string title = clap.getName();
+	setName(title);
+	setAttackDamage(clap.getAttackDamage());
+	setEnergyPoints(clap.getEnergyPoints());
+	setHitPoints(clap.getHitPoints());
+}

@@ -29,3 +29,26 @@ ScavTrap::~ScavTrap()
 {
 	std::cout << "ScavTrap destructor called" << std::endl;
 }
+
+ScavTrap& ScavTrap::operator=(const ScavTrap& scav)
+{
+	std::cout << "Copy assignment operator called" << std::endl;
+	std::string title = scav.getName();
+	if (this == &scav)
+		return (*this);
+	setName(title);
+	setAttackDamage(scav.getAttackDamage());
+	setEnergyPoints(scav.getEnergyPoints());
+	setHitPoints(scav.getHitPoints());
+	return (*this);
+}
+
+ScavTrap::ScavTrap(const ScavTrap& scav)
+{
+	std::cout << "Copy constructor called" << std::endl;
+	std::string title = scav.getName();
+	setName(title);
+	setAttackDamage(scav.getAttackDamage());
+	setEnergyPoints(scav.getEnergyPoints());
+	setHitPoints(scav.getHitPoints());
+}
