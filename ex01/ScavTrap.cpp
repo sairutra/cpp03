@@ -3,5 +3,5 @@
 
 void ScavTrap::guardGate()
 {
-	return ;
+	std::cout << "ScavTrap now in Gate keeper mode" << std::endl;
 }
