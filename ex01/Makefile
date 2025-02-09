@@ -2,7 +2,7 @@
 CC          := c++ 
 
 #The Target Binary Program
-TARGET      := claptrap
+TARGET      := scavtrap
 
 #The Directories, Source, Includes, Objects, Binary and Resources
 SRCDIR      := ./
@@ -15,7 +15,7 @@ CFLAGS      := -Wfatal-errors -Wall -Wextra -Wpedantic -Wconversion -Wshadow -We
 #---------------------------------------------------------------------------------
 #DO NOT EDIT BELOW THIS LINE
 #---------------------------------------------------------------------------------
-SOURCES     := main.cpp ClapTrap.cpp
+SOURCES     := main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJECTS     := $(patsubst $(SRCDIR)/%,$(OBJDIR)/%,$(SOURCES:.$(SRCEXT)=.$(OBJEXT)))
 DEPS        := $(OBJECTS:.o=.d)
 
