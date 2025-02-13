@@ -18,11 +18,17 @@ ScavTrap::ScavTrap(std::string title)
 {
 	std::cout << "ScavTrap parameterized constructor called" << std::endl;
 	setName(title);
+	setAttackDamage(20);
+	setEnergyPoints(50);
+	setHitPoints(100);
 }
 
 ScavTrap::ScavTrap()
 {
 	std::cout << "ScavTrap default constructor called" << std::endl;
+	setAttackDamage(20);
+	setEnergyPoints(50);
+	setHitPoints(100);
 }
 
 ScavTrap::~ScavTrap()

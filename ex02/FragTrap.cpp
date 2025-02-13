@@ -9,11 +9,17 @@ FragTrap::FragTrap(std::string title)
 {
 	std::cout << "FragTrap parameterized constructor called" << std::endl;
 	setName(title);
+	setAttackDamage(30);
+	setEnergyPoints(100);
+	setHitPoints(100);
 }
 
 FragTrap::FragTrap()
 {
 	std::cout << "FragTrap default constructor called" << std::endl;
+	setAttackDamage(30);
+	setEnergyPoints(100);
+	setHitPoints(100);
 }
 
 FragTrap::~FragTrap()

@@ -77,11 +77,17 @@ ClapTrap::ClapTrap(std::string title)
 {
 	std::cout << "ClapTrap parameterized constructor called" << std::endl;
 	name = title;
+	setAttackDamage(0);
+	setEnergyPoints(10);
+	setHitPoints(10);
 }
 
 ClapTrap::ClapTrap()
 {
 	std::cout << "ClapTrap default constructor called" << std::endl;
+	setAttackDamage(0);
+	setEnergyPoints(10);
+	setHitPoints(10);
 }
 
 ClapTrap::~ClapTrap()
