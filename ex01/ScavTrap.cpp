@@ -14,7 +14,7 @@ void ScavTrap::guardGate()
 	std::cout << "ScavTrap now in Gate keeper mode" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string title)
+ScavTrap::ScavTrap(std::string title) : ClapTrap()
 {
 	std::cout << "ScavTrap parameterized constructor called" << std::endl;
 	setName(title);
@@ -23,7 +23,7 @@ ScavTrap::ScavTrap(std::string title)
 	setHitPoints(100);
 }
 
-ScavTrap::ScavTrap()
+ScavTrap::ScavTrap() : ClapTrap()
 {
 	std::cout << "ScavTrap default constructor called" << std::endl;
 	setAttackDamage(20);
@@ -36,7 +36,7 @@ ScavTrap::~ScavTrap()
 	std::cout << "ScavTrap destructor called" << std::endl;
 }
 
-ScavTrap& ScavTrap::operator=(const ScavTrap& scav)
+ScavTrap& ScavTrap::operator=(const ScavTrap& scav) 
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	std::string title = scav.getName();
@@ -49,7 +49,7 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& scav)
 	return (*this);
 }
 
-ScavTrap::ScavTrap(const ScavTrap& scav)
+ScavTrap::ScavTrap(const ScavTrap& scav) : ClapTrap()
 {
 	std::cout << "Copy constructor called" << std::endl;
 	std::string title = scav.getName();
