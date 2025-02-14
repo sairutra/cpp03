@@ -20,17 +20,17 @@ ScavTrap::ScavTrap(std::string title) : ClapTrap()
 {
 	std::cout << "ScavTrap parameterized constructor called" << std::endl;
 	name = title;
-	hitPoints = 10;
-	energyPoints = 10;
-	attackDamage = 0;
+	hitPoints = 100;
+	energyPoints = 50;
+	attackDamage = 20;
 }
 
 ScavTrap::ScavTrap() : ClapTrap()
 {
 	std::cout << "ScavTrap default constructor called" << std::endl;
-	hitPoints = 10;
-	energyPoints = 10;
-	attackDamage = 0;
+	hitPoints = 100;
+	energyPoints = 50;
+	attackDamage = 20;
 }
 
 ScavTrap::~ScavTrap()
@@ -44,9 +44,9 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& scav)
 	if (this == &scav)
 		return (*this);
 	name = scav.name;
-	hitPoints = 10;
-	energyPoints = 10;
-	attackDamage = 0;
+	hitPoints = 100;
+	energyPoints = 50;
+	attackDamage = 20;
 	return (*this);
 }
 
@@ -54,7 +54,7 @@ ScavTrap::ScavTrap(const ScavTrap& scav) : ClapTrap()
 {
 	std::cout << "Copy constructor called" << std::endl;
 	name = scav.name;
-	hitPoints = 10;
-	energyPoints = 10;
-	attackDamage = 0;
+	hitPoints = 100;
+	energyPoints = 50;
+	attackDamage = 20;
 }
