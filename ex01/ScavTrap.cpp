@@ -4,31 +4,33 @@ void ScavTrap::attack(const std::string& target)
 {
 	if (!isAlive())
 		return;
-	setEnergyPoints(getEnergyPoints() - 1);
-	std::cout << "ScavTrap " << getName() << " attacks " << target 
-	<< ", causing " << getAttackDamage() << " points of damage!" << std::endl;
+	energyPoints = energyPoints - 1;
+	std::cout << "ScavTrap " << name << " attacks " << target 
+	<< ", causing " << attackDamage << " points of damage!" << std::endl;
 }
 
 void ScavTrap::guardGate()
 {
+	if (!isAlive())
+		return;
 	std::cout << "ScavTrap now in Gate keeper mode" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string title) : ClapTrap()
 {
 	std::cout << "ScavTrap parameterized constructor called" << std::endl;
-	setName(title);
-	setAttackDamage(20);
-	setEnergyPoints(50);
-	setHitPoints(100);
+	name = title;
+	hitPoints = 10;
+	energyPoints = 10;
+	attackDamage = 0;
 }
 
 ScavTrap::ScavTrap() : ClapTrap()
 {
 	std::cout << "ScavTrap default constructor called" << std::endl;
-	setAttackDamage(20);
-	setEnergyPoints(50);
-	setHitPoints(100);
+	hitPoints = 10;
+	energyPoints = 10;
+	attackDamage = 0;
 }
 
 ScavTrap::~ScavTrap()
@@ -39,22 +41,20 @@ ScavTrap::~ScavTrap()
 ScavTrap& ScavTrap::operator=(const ScavTrap& scav) 
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	std::string title = scav.getName();
 	if (this == &scav)
 		return (*this);
-	setName(title);
-	setAttackDamage(scav.getAttackDamage());
-	setEnergyPoints(scav.getEnergyPoints());
-	setHitPoints(scav.getHitPoints());
+	name = scav.name;
+	hitPoints = 10;
+	energyPoints = 10;
+	attackDamage = 0;
 	return (*this);
 }
 
 ScavTrap::ScavTrap(const ScavTrap& scav) : ClapTrap()
 {
 	std::cout << "Copy constructor called" << std::endl;
-	std::string title = scav.getName();
-	setName(title);
-	setAttackDamage(scav.getAttackDamage());
-	setEnergyPoints(scav.getEnergyPoints());
-	setHitPoints(scav.getHitPoints());
+	name = scav.name;
+	hitPoints = 10;
+	energyPoints = 10;
+	attackDamage = 0;
 }
