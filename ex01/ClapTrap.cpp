@@ -71,7 +71,7 @@ ClapTrap::ClapTrap(const ClapTrap& clap)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	name = clap.name;
-	hitPoints = 0;
+	hitPoints = 10;
 	energyPoints = 10;
-	attackDamage = 10;
+	attackDamage = 0;
 }
